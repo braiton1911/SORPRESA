@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>FLORES</title>
+</head>
+<body>
+    <div class="greetings">
+
+        <span>S</span>
+        <span>A</span>
+        <span>B</span>
+        <span>R</span>
+        <span>I</span>
+        &nbsp;
+        <span>Y</span>
+        &nbsp;
+        <span>O</span>
+        <span>L</span>
+        <span>I</span>
+    </div>
+    <div class="greetings">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="description">
+        <span>Tengo un regalo para ustedes!!!</span> 
+    </div>
+        <button onclick="playMusic()">Play Música</button> <!-- Botón de reproducción -->
+    </div>
+    <div class="button">
+ <button>
+     <a href="FLORES.html">Haga Clic</a>
+ </button>
+ <audio id="backgroundMusic" loop hidden>
+    <source src="FLORES%20AMARILLAS_mezcla.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+</audio>
+<script>
+    function playMusic() {
+        var audio = document.getElementById('backgroundMusic');
+        audio.play();
+        localStorage.setItem('isPlaying', 'true'); // Guardar el estado en localStorage
+    }
+
+    // Verificar si la música ya está sonando y continuarla
+    window.onload = function() {
+        if (localStorage.getItem('isPlaying') === 'true') {
+            var audio = document.getElementById('backgroundMusic');
+            audio.play();
+        }
+    }
+</script>
+</body>
+</html>
